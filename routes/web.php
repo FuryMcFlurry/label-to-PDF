@@ -4,12 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\LabelController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-
+Route::get('/', [LabelController::class, 'list'])->name('label.list');
 
 Route::get('/barcode-test', [LabelController::class, 'showBarcode']);
 
